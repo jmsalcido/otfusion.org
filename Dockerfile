@@ -11,9 +11,9 @@ ENV NODE_ENV production
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN \
-  if [ -f yarn.lock ]; then yarn --production; \
-  elif [ -f package-lock.json ]; then npm ci --only=production; \
-  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --only=production; \
+  if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
+  elif [ -f package-lock.json ]; then npm ci; \
+  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfile; \
   else echo "Lockfile not found." && exit 1; \
   fi
 
