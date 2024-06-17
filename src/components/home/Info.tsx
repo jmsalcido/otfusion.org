@@ -2,11 +2,12 @@ import Link from "next/link";
 import React from "react";
 import {Button} from "@nextui-org/button";
 import Image from "next/image";
+import {SwirlIcon} from "@/components/icons";
 
 export const Info = () => {
 
   const name = "OTFusion";
-  const description = "Just a place for my personal projects";
+  const description = "A place for personal experiments.";
 
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
@@ -14,7 +15,7 @@ export const Info = () => {
         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">{name}</h1>
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"><span style={{ display: 'inline-block' }}><SwirlIcon height={"64"} width={"64"}/></span>{name}</h1>
               <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">{description}</p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
