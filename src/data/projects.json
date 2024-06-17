@@ -13,6 +13,30 @@
     "image": "https://res.cloudinary.com/dv6xqpn21/image/upload/f_auto,q_auto/v1718591677/otfusion/projects/tepache-dev.png",
     "imageDescription": "Logo of agency",
     "url": "https://eslegalmitrabajo.com",
-    "tags": ["cofounder", "business"]
+    "tags": ["cofounder", "business", "software", "engineering"]
+  },
+  {
+    "title": "Juegathon",
+    "description": "Yearly Charity Event in Hermosillo, Sonora, I am the founder and organizer",
+    "image": "https://res.cloudinary.com/dv6xqpn21/image/upload/f_auto,q_auto/v1718599845/otfusion/projects/juegathon.png",
+    "imageDescription": "Logo of the charity event",
+    "url": "https://juegathon.com",
+    "tags": ["founder", "charity", "stream", "videogames"]
+  },
+  {
+    "title": "Urban Glow",
+    "description": "An AI Musician, I am the manager of this AI Project.",
+    "image": "https://res.cloudinary.com/dv6xqpn21/image/upload/v1718599981/otfusion/projects/urban-glow.jpg",
+    "imageDescription": "Logo of an AI Musician Project",
+    "url": "https://open.spotify.com/artist/0iudDTKgNaU5SU9VF6P9oz?si=KOiQm57hSJyS5EzXSx4-0g",
+    "tags": ["music", "manager", "producer"]
+  },
+  {
+    "title": "Gato Gordo",
+    "description": "\"Los mejores desayunos de la cuadra\", a small restaurant in Hermosillo, Sonora.",
+    "image": "https://res.cloudinary.com/dv6xqpn21/image/upload/v1718600142/otfusion/projects/gatogordocc.png",
+    "imageDescription": "Picture of some food in the restaurant",
+    "url": "https://www.instagram.com/gatogordocc/",
+    "tags": ["investor", "business", "food"]
   }
 ]

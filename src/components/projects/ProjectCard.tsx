@@ -30,7 +30,7 @@ export const ProjectCard = (props: Props) => {
           <h3 className="text-lg font-semibold md:text-xl mb-2 text-center">{project.title}</h3>
           <p className="text-sm text-gray-500 dark:text-gray-400 flex-grow text-center">{project.description}</p>
         </div>
-        <div className={'flex flex-row'}>
+        <div className={'flex flex-row flex-wrap'}>
           {project.tags.map((tag) => (
             <Chip key={tag} className="mx-1 mt-2" color="default">{tag}</Chip>
           ))}
