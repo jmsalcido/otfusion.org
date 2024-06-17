@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Culto al Perro Café",
+    "description": "A Coffee Shop in Hermosillo, Sonora, I am roaster, administrator, manager and some times barista!",
+    "image": "https://res.cloudinary.com/dv6xqpn21/image/upload/f_auto,q_auto/v1718590454/otfusion/projects/cpc.png",
+    "imageDescription": "A mural in the coffee shop",
+    "url": "https://perro.cafe",
+    "tags": ["coffee", "cofounder", "business"]
+  },
+  {
+    "title": "Tepache Dev",
+    "description": "A Software Development Agency in Hermosillo, Sonora",
+    "image": "https://res.cloudinary.com/dv6xqpn21/image/upload/f_auto,q_auto/v1718591677/otfusion/projects/tepache-dev.png",
+    "imageDescription": "Logo of agency",
+    "url": "https://eslegalmitrabajo.com",
+    "tags": ["cofounder", "business"]
+  }
+]
