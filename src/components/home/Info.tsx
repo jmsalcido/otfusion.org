@@ -29,7 +29,7 @@ export const Info = () => {
             </div>
           </div>
           <Image
-            src="https://res.cloudinary.com/dv6xqpn21/image/upload/v1718507949/otfusion/remolino.jpg"
+            src="https://res.cloudinary.com/otfusion/image/upload/v1718507949/otfusion/remolino.jpg"
             width="550"
             height="550"
             alt="Hero"

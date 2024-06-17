@@ -44,7 +44,7 @@ export const Services = () => {
             </ul>
           </div>
           <Image
-            src="https://res.cloudinary.com/dv6xqpn21/image/upload/v1718507263/otfusion/coffee.jpg"
+            src="https://res.cloudinary.com/otfusion/image/upload/v1718507263/otfusion/coffee.jpg"
             width="550"
             height="310"
             alt="Services"

@@ -26,7 +26,7 @@ export const About = () => {
             </div>
           </div>
           <Image
-            src="https://res.cloudinary.com/dv6xqpn21/image/upload/v1718508573/otfusion/ce-bro.jpg"
+            src="https://res.cloudinary.com/otfusion/image/upload/v1718508573/otfusion/ce-bro.jpg"
             width="550"
             height="550"
             alt="Founder"

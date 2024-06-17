@@ -18,7 +18,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'res.cloudinary.com',
         port: '',
-        pathname: '/v1718507949/**',
+        pathname: 'otfusion/**/v1718507949/**',
       },
     ],
   },
