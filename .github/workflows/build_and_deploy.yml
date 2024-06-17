@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths-ignore:
       - '**/README.md'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -40,6 +41,7 @@ jobs:
           tags: ${{ env.IMAGE_URL }}
           build-args: |
             NODE_ENV=production
+            NEXT_PUBLIC_POSTHOG_KEY=${{ secrets.NEXT_PUBLIC_POSTHOG_KEY }}
 
       # Deploy to CapRover
       - name: Deploy Image to CapRover
@@ -54,7 +56,7 @@ jobs:
         uses: appleboy/telegram-action@master
         if: always()
         with:
-          to: ${{ secrets.TELEGRAM_GROUP_CHAT_ID }}
+          to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             🤖 *[OTFusion main-site]*
