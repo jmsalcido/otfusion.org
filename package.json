@@ -1,6 +1,6 @@
 {
   "name": "otfusion.org",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,7 +8,7 @@
     "start": "next start",
     "nextlint": "next lint",
     "lint": "eslint 'src/**/*.{js,ts,tsx}'",
-    "prepare": "husky init"
+    "prepare": "if [ \"$NODE_ENV\" != \"production\" ]; then husky init; fi"
   },
   "dependencies": {
     "@nextui-org/react": "^2.4.2",
