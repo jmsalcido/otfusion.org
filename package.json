@@ -8,7 +8,7 @@
     "start": "next start",
     "nextlint": "next lint",
     "lint": "eslint 'src/**/*.{js,ts,tsx}'",
-    "prepare": "husky install"
+    "prepare": "husky init"
   },
   "dependencies": {
     "@nextui-org/react": "^2.4.2",
@@ -28,6 +28,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
+    "husky": "^9.0.11",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
