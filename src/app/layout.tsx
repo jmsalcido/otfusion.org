@@ -1,6 +1,8 @@
 import {Archivo, Libre_Franklin} from 'next/font/google'
 import React from "react";
 import {Providers} from "@/app/providers";
+import './styles.css';
+import {Footer} from "@/components/layout/Footer";
 
 const libre_franklin = Libre_Franklin({
   subsets: ['latin'],
@@ -13,8 +15,6 @@ const archivo = Archivo({
   variable: '--font-archivo',
 })
 
-import './styles.css';
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,7 +24,10 @@ export default function RootLayout({
     <html lang="en">
     <body className={libre_franklin.variable + ' ' + archivo.variable}>
     <Providers>
-      {children}
+      <div className="flex flex-col min-h-[100dvh]">
+        {children}
+      </div>
+      <Footer />
     </Providers>
     </body>
     </html>
