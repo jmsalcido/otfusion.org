@@ -46,5 +46,13 @@
     "imageDescription": "Picture from the podcast cover",
     "url": "https://podcasters.spotify.com/pod/show/algoasiesvivirenmicabeza",
     "tags": ["podcast", "personal", "producer"]
+  },
+  {
+    "title": "Taller Lobo y Osado",
+    "description": "A small workshop in Hermosillo, Sonora, I am working as business development in this venture.",
+    "image": "https://res.cloudinary.com/otfusion/image/upload/v1721761319/LOBO_Y_OSA_Brand-09_kgfe0f.png",
+    "imageDescription": "Picture of the workshop logo",
+    "url": "https://loboyosa.com",
+    "tags": ["business", "development", "design", "branding"]
   }
 ]
