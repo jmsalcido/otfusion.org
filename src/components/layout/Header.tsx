@@ -7,6 +7,10 @@ interface Props {
 }
 
 export const HomeHeader = () => {
+  const currentHost = typeof window !== 'undefined' ? window.location.hostname : 'otfusion.org';
+  const protocol = typeof window !== 'undefined' ? window.location.protocol : 'https:';
+  const blogUrl = `${protocol}//blog.${currentHost}`;
+
   return (
     <Header links={(
       <>
@@ -18,6 +22,9 @@ export const HomeHeader = () => {
         </Link>
         <Link href={"#contact"} className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
           Contact
+        </Link>
+        <Link href={blogUrl} className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+          Blog
         </Link>
       </>
     )}/>
