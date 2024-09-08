@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image from "@/components/Image";
 
 export const Services = () => {
   return (
@@ -44,7 +44,7 @@ export const Services = () => {
             </ul>
           </div>
           <Image
-            src="https://res.cloudinary.com/otfusion/image/upload/v1718507263/otfusion/coffee.jpg"
+            src="otfusion/coffee.jpg"
             width="550"
             height="310"
             alt="Services"

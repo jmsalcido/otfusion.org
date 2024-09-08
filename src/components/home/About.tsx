@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "@/components/Image";
 
 export const About = () => {
   return (
@@ -12,7 +12,7 @@ export const About = () => {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">About Me</h2>
               <p
                 className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                My name is José Salcido, a Software Engineer, Entrepreneur, Leader, Coffee Roaster and I dont know what will be my next adventure. With over 10 years of experience in different industries I am very passionate about helping all type of businesses succeed.
+                {'My name is José Salcido, a Software Engineer, Entrepreneur, Leader, Coffee Roaster and I dont know what will be my next adventure. With over 10 years of experience in different industries I am very passionate about helping all type of businesses succeed.'}
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -26,7 +26,7 @@ export const About = () => {
             </div>
           </div>
           <Image
-            src="https://res.cloudinary.com/otfusion/image/upload/v1718508573/otfusion/ce-bro.jpg"
+            src="otfusion/ce-bro.jpg"
             width="550"
             height="550"
             alt="Founder"

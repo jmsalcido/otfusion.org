@@ -1,5 +1,5 @@
 import React from "react";
-import {Header, HomeHeader} from "@/components/layout/Header";
+import {HomeHeader} from "@/components/layout/Header";
 import {Info} from "@/components/home/Info";
 import {Services} from "@/components/home/Services";
 import {About} from "@/components/home/About";

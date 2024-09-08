@@ -2,7 +2,7 @@
   {
     "title": "Culto al Perro Café",
     "description": "A Coffee Shop in Hermosillo, Sonora, I am roaster, administrator, manager and some times barista!",
-    "image": "https://res.cloudinary.com/otfusion/image/upload/f_auto,q_auto/v1718590454/otfusion/projects/cpc.png",
+    "image": "otfusion/projects/cpc.png",
     "imageDescription": "A mural in the coffee shop",
     "url": "https://perro.cafe",
     "tags": ["coffee", "cofounder", "business"]
@@ -10,7 +10,7 @@
   {
     "title": "Tepache Dev",
     "description": "A Software Development Agency in Hermosillo, Sonora",
-    "image": "https://res.cloudinary.com/otfusion/image/upload/f_auto,q_auto/v1718591677/otfusion/projects/tepache-dev.png",
+    "image": "otfusion/projects/tepache-dev.png",
     "imageDescription": "Logo of agency",
     "url": "https://eslegalmitrabajo.com",
     "tags": ["cofounder", "business", "software", "engineering"]
@@ -18,7 +18,7 @@
   {
     "title": "Juegathon",
     "description": "Yearly Charity Event in Hermosillo, Sonora, I am the founder and organizer",
-    "image": "https://res.cloudinary.com/otfusion/image/upload/f_auto,q_auto/v1718599845/otfusion/projects/juegathon.png",
+    "image": "otfusion/projects/juegathon.png",
     "imageDescription": "Logo of the charity event",
     "url": "https://juegathon.com",
     "tags": ["founder", "charity", "stream", "videogames"]
@@ -26,7 +26,7 @@
   {
     "title": "Urban Glow",
     "description": "An AI Musician, I am the manager of this AI Project.",
-    "image": "https://res.cloudinary.com/otfusion/image/upload/v1718599981/otfusion/projects/urban-glow.jpg",
+    "image": "otfusion/projects/urban-glow.jpg",
     "imageDescription": "Logo of an AI Musician Project",
     "url": "https://open.spotify.com/artist/0iudDTKgNaU5SU9VF6P9oz?si=KOiQm57hSJyS5EzXSx4-0g",
     "tags": ["music", "manager", "producer"]
@@ -34,7 +34,7 @@
   {
     "title": "Gato Gordo",
     "description": "\"Los mejores desayunos de la cuadra\", a small restaurant in Hermosillo, Sonora.",
-    "image": "https://res.cloudinary.com/otfusion/image/upload/v1718600142/otfusion/projects/gatogordocc.png",
+    "image": "otfusion/projects/gatogordocc.png",
     "imageDescription": "Picture of some food in the restaurant",
     "url": "https://www.instagram.com/gatogordocc/",
     "tags": ["investor", "business", "food"]
@@ -42,7 +42,7 @@
   {
     "title": "Algo asi es vivir en mi cabeza",
     "description": "A personal podcast about my life and my thoughts, I am the host and producer.",
-    "image": "https://res.cloudinary.com/otfusion/image/upload/v1718600472/otfusion/projects/podcast.jpg",
+    "image": "otfusion/projects/podcast.jpg",
     "imageDescription": "Picture from the podcast cover",
     "url": "https://podcasters.spotify.com/pod/show/algoasiesvivirenmicabeza",
     "tags": ["podcast", "personal", "producer"]
@@ -50,7 +50,7 @@
   {
     "title": "Taller Lobo y Osa",
     "description": "A small workshop in Hermosillo, Sonora, I am working as business development in this venture.",
-    "image": "https://res.cloudinary.com/otfusion/image/upload/v1721761319/LOBO_Y_OSA_Brand-09_kgfe0f.png",
+    "image": "LOBO_Y_OSA_Brand-09_kgfe0f.png",
     "imageDescription": "Picture of the workshop logo",
     "url": "https://loboyosa.com",
     "tags": ["business-dev", "design", "branding"]

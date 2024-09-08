@@ -3,7 +3,7 @@ import {Project} from "@/app/projects/types";
 import {Card, CardBody, CardFooter} from "@nextui-org/card";
 import Link from "next/link";
 import {Chip} from "@nextui-org/chip";
-import Image from "next/image";
+import Image from "@/components/Image";
 
 interface Props {
   project: Project;

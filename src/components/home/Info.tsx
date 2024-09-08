@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import {Button} from "@nextui-org/button";
-import Image from "next/image";
+import Image from "@/components/Image";
 import {SwirlIcon} from "@/components/icons";
 
 export const Info = () => {
@@ -29,7 +29,7 @@ export const Info = () => {
             </div>
           </div>
           <Image
-            src="https://res.cloudinary.com/otfusion/image/upload/v1718507949/otfusion/remolino.jpg"
+            src="otfusion/remolino.jpg"
             width="550"
             height="550"
             alt="Hero"
