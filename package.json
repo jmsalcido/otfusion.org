@@ -20,7 +20,8 @@
     "posthog-js": "^1.139.2",
     "react": "^18",
     "react-canvas-confetti": "^2.0.7",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@types/node": "^20",
