@@ -1,6 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import React, {useState} from 'react';
+import Image from "@/components/Image";
+import Head from "next/head";
 
 export default function NotFound() {
   const [_clicked, setClicked] = useState(false);
@@ -29,25 +31,32 @@ export default function NotFound() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-notFound text-center px-4">
-      <h1 className="text-6xl sm:text-9xl font-bold text-gray-800 mb-4">404</h1>
-      <h2 className="text-2xl sm:text-4xl font-semibold text-gray-700 mb-8">Sorry, Not Found</h2>
+    <>
+      <Head>
+        <title>404 - Page Not Found</title>
+      </Head>
+      <div className="flex flex-col items-center justify-center min-h-screen bg-notFound text-center px-4">
+        <h1 className="text-6xl sm:text-9xl font-bold text-gray-800 mb-4">404</h1>
+        <h2 className="text-2xl sm:text-4xl font-semibold text-gray-700 mb-8">Sorry, Not Found</h2>
 
-      <div className="mb-8">
-        <img
-          src="/404.png"
-          alt="404 Image"
-          className="object-cover w-48 h-full sm:w-96 sm:h-full"
-        />
+        <div className="mb-8">
+          <Image
+            src="otfusion/404.webp"
+            alt="404 Image"
+            className="object-cover w-48 h-full sm:w-96 sm:h-full"
+            width={1000}
+            height={1000}
+          />
+        </div>
+
+        <a
+          href="/"
+          className="px-6 sm:px-8 py-3 sm:py-4 text-white text-lg sm:text-xl hover:bg-[#B57D5D] bg-black relative overflow-hidden rounded-lg"
+          onClick={handleClick}
+        >
+          Go Back Home
+        </a>
       </div>
-
-      <a
-        href="/"
-        className="px-6 sm:px-8 py-3 sm:py-4 text-white text-lg sm:text-xl hover:bg-[#B57D5D] bg-black relative overflow-hidden rounded-lg"
-        onClick={handleClick}
-      >
-        Go Back Home
-      </a>
-    </div>
+    </>
   );
 }
