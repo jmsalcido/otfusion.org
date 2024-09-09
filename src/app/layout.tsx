@@ -3,6 +3,7 @@ import React from "react";
 import {Providers} from "@/app/providers";
 import './styles.css';
 import {Footer} from "@/components/layout/Footer";
+import {Metadata} from "next";
 
 const libre_franklin = Libre_Franklin({
   subsets: ['latin'],
@@ -22,14 +23,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+    <head>
+    </head>
     <body className={libre_franklin.variable + ' ' + archivo.variable}>
     <Providers>
       <div className="flex flex-col min-h-[100dvh]">
         {children}
       </div>
-      <Footer />
+      <Footer/>
     </Providers>
     </body>
     </html>
   )
 }
+
+export const metadata: Metadata = {
+  title: "OTFusion",
+  description: "Just a place for my personal projects and thoughts.",
+};

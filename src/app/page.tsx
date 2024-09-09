@@ -4,6 +4,7 @@ import {Info} from "@/components/home/Info";
 import {Services} from "@/components/home/Services";
 import {About} from "@/components/home/About";
 import {Contact} from "@/components/home/Contact";
+import {Metadata} from "next";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
   );
 }
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "OTFusion | José Salcido",
   description: "Just a place for my personal projects and thoughts.",
 };

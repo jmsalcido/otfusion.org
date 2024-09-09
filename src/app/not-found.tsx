@@ -2,7 +2,7 @@
 
 import React, {useState} from 'react';
 import Image from "@/components/Image";
-import Head from "next/head";
+import {Metadata} from "next";
 
 export default function NotFound() {
   const [_clicked, setClicked] = useState(false);
@@ -32,9 +32,6 @@ export default function NotFound() {
 
   return (
     <>
-      <Head>
-        <title>404 - Page Not Found</title>
-      </Head>
       <div className="flex flex-col items-center justify-center min-h-screen bg-notFound text-center px-4">
         <h1 className="text-6xl sm:text-9xl font-bold text-gray-800 mb-4">404</h1>
         <h2 className="text-2xl sm:text-4xl font-semibold text-gray-700 mb-8">Sorry, Not Found</h2>
@@ -59,4 +56,9 @@ export default function NotFound() {
       </div>
     </>
   );
+}
+
+export const metadata: Metadata = {
+    title: '404 - Page Not Found',
+    description: 'The page you are looking for does not exist.'
 }
