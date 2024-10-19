@@ -8,7 +8,7 @@
     "start": "next start",
     "nextlint": "next lint",
     "lint": "eslint 'src/**/*.{js,ts,tsx}'",
-    "prepare": "husky"
+    "prepare": "if [ \"$NODE_ENV\" = \"development\" ]; then husky install; fi"
   },
   "dependencies": {
     "@nextui-org/react": "^2.4.2",
