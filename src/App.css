@@ -121,6 +121,71 @@ textarea:focus {
   overflow: hidden;
 }
 
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Improve touch targets */
+  button, a, input, textarea {
+    min-height: 44px;
+  }
+  
+  /* Better text sizing for mobile */
+  .text-4xl {
+    font-size: 2rem;
+    line-height: 2.25rem;
+  }
+  
+  .text-5xl {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+  
+  .text-6xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  
+  /* Improve spacing for mobile */
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+  
+  .space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  .space-y-8 > * + * {
+    margin-top: 2rem;
+  }
+  
+  /* Better form elements on mobile */
+  input, textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Improve button sizing on mobile */
+  .h-12 {
+    height: 3rem;
+  }
+  
+  /* Better card spacing on mobile */
+  .p-4 {
+    padding: 1rem;
+  }
+  
+  .p-6 {
+    padding: 1.5rem;
+  }
+  
+  /* Improve grid gaps on mobile */
+  .gap-4 {
+    gap: 1rem;
+  }
+  
+  .gap-6 {
+    gap: 1.5rem;
+  }
+}
+
 /* Responsive text sizing */
 @media (min-width: 640px) {
   .text-3xl {
@@ -151,5 +216,25 @@ textarea:focus {
   
   ::-webkit-scrollbar-thumb:hover {
     background: #d1d5db;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+body {
+  overflow-x: hidden;
+}
+
+/* Improve mobile navigation */
+@media (max-width: 768px) {
+  /* Ensure mobile menu is properly positioned */
+  .md\\:hidden {
+    display: block;
+  }
+  
+  /* Improve mobile menu button */
+  .md\\:hidden button {
+    padding: 0.5rem;
+    min-width: 44px;
+    min-height: 44px;
   }
 }
