@@ -23,7 +23,7 @@ const projects = [
     technologies: ["founder", "charity", "stream", "videogames"],
     imageUrl: "https://res.cloudinary.com/otfusion/image/upload/v1718600472/otfusion/projects/juegathon.png",
     liveUrl: "https://juegathon.com",
-    active: true
+    active: false
   },
   {
     title: "Urban Glow",
