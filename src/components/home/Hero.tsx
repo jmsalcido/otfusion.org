@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 interface HeroProps {
   isVisible: boolean
 }
@@ -24,12 +26,12 @@ export const Hero = ({ isVisible }: HeroProps) => {
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row mt-6">
-                <a
-                  href="/projects"
+                <Link
+                  to="/projects"
                   className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 dark:bg-gray-50 px-8 text-sm font-medium text-gray-50 dark:text-gray-900 shadow transition-colors hover:bg-gray-900/90 dark:hover:bg-gray-50/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:focus-visible:ring-gray-300"
                 >
                   Go to Projects
-                </a>
+                </Link>
               </div>
             </div>
           </div>

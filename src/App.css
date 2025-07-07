@@ -113,6 +113,14 @@ textarea:focus {
   letter-spacing: -0.05em;
 }
 
+/* Line clamp utilities */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* Responsive text sizing */
 @media (min-width: 640px) {
   .text-3xl {

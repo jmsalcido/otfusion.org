@@ -6,4 +6,8 @@ export { Footer } from './layout/Footer'
 export { Hero } from './home/Hero'
 export { Services } from './home/Services'
 export { About } from './home/About'
-export { Contact } from './home/Contact' 
+export { Contact } from './home/Contact'
+
+// Projects components
+export { ProjectCard } from './projects/ProjectCard'
+export { ProjectsGrid } from './projects/ProjectsGrid' 
