@@ -53,7 +53,7 @@ const projects = [
     title: "Taller Lobo y Osa",
     description: "A small workshop in Hermosillo, Sonora, I am working as business development in this venture",
     technologies: ["business-dev", "design", "branding"],
-    imageUrl: "https://loboyosa.com/assets/characters-B8DLn75m.svg",
+    imageUrl: "https://res.cloudinary.com/otfusion/image/upload/v1721761319/LOBO_Y_OSA_Brand-09_kgfe0f.png",
     liveUrl: "https://loboyosa.com",
     active: true
   },
