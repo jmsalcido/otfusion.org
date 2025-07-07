@@ -1,18 +1,11 @@
-import React from "react";
-
 export const Footer = () => {
   return (
-    <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-      <p className="text-xs text-gray-500 dark:text-gray-400">&copy; {new Date().getFullYear()} José Salcido. All
-        rights reserved.</p>
-      {/*<nav className="sm:ml-auto flex gap-4 sm:gap-6">*/}
-      {/*  <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>*/}
-      {/*    Terms of Service*/}
-      {/*  </Link>*/}
-      {/*  <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>*/}
-      {/*    Privacy*/}
-      {/*  </Link>*/}
-      {/*</nav>*/}
+    <footer className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-200 dark:border-gray-700">
+      <div className="max-w-7xl mx-auto text-center">
+        <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 leading-relaxed">
+          © {new Date().getFullYear()} OTFusion. All rights reserved. | Built with ❤️ and modern technology
+        </p>
+      </div>
     </footer>
   )
-}
+} 
