@@ -35,13 +35,12 @@ export const Hero = ({ isVisible }: HeroProps) => {
               </div>
             </div>
           </div>
-          <div className="mx-auto aspect-video overflow-hidden rounded-xl bg-gray-200 dark:bg-gray-700 w-full max-w-md lg:order-last lg:aspect-square lg:max-w-none flex items-center justify-center">
-            <div className="text-gray-400 dark:text-gray-500 text-center p-4">
-              <svg className="w-16 h-16 sm:w-24 sm:h-24 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <p className="text-sm sm:text-base">Hero Image Placeholder</p>
-            </div>
+          <div className="mx-auto aspect-video overflow-hidden rounded-xl w-full max-w-md lg:order-last lg:aspect-square lg:max-w-none">
+            <img
+              src="https://res.cloudinary.com/otfusion/image/upload/v1/otfusion/remolino.jpg"
+              alt="Remolino - representing innovation and dynamic movement"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>

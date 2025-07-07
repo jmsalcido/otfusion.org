@@ -39,13 +39,12 @@ export const Services = () => {
               </li>
             </ul>
           </div>
-          <div className="mx-auto aspect-video overflow-hidden rounded-xl bg-gray-200 dark:bg-gray-700 w-full max-w-md lg:order-last lg:max-w-none flex items-center justify-center">
-            <div className="text-gray-400 dark:text-gray-500 text-center p-4">
-              <svg className="w-16 h-16 sm:w-24 sm:h-24 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <p className="text-sm sm:text-base">Services Image Placeholder</p>
-            </div>
+          <div className="mx-auto aspect-video overflow-hidden rounded-xl w-full max-w-md lg:order-last lg:max-w-none">
+            <img
+              src="https://res.cloudinary.com/otfusion/image/upload/v1/otfusion/coffee.jpg"
+              alt="Coffee - representing quality and craftsmanship in services"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>

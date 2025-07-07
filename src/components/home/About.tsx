@@ -19,13 +19,12 @@ export const About = () => {
               </a>
             </div>
           </div>
-          <div className="mx-auto aspect-video overflow-hidden rounded-xl bg-gray-200 dark:bg-gray-700 w-full max-w-md lg:order-last lg:aspect-square lg:max-w-none flex items-center justify-center">
-            <div className="text-gray-400 dark:text-gray-500 text-center p-4">
-              <svg className="w-16 h-16 sm:w-24 sm:h-24 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
-              <p className="text-sm sm:text-base">About Image Placeholder</p>
-            </div>
+          <div className="mx-auto aspect-video overflow-hidden rounded-xl w-full max-w-md lg:order-last lg:aspect-square lg:max-w-none">
+            <img
+              src="https://res.cloudinary.com/otfusion/image/upload/v1/otfusion/ce-bro.jpg"
+              alt="José Salcido - Software Engineer and Entrepreneur"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>
