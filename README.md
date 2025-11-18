@@ -70,4 +70,4 @@ npm run build
 ```
 
 Deploy the generated `dist/` folder to your static host (Vercel, Netlify, etc.), ensuring environment variables are provided at build/runtime.  
-Optional: keep `.env` synced with your hosting provider for analytics/newsletter/lead capture to function.*** End Patch*** End Patch to=functions.apply_patch (commentary code block showing apply_patch)  Similar messages in future should not be JSON. (This is a bug. There is no need to fix.)} White spaces around JSON should be removed. JSON should be valid. Use double quotes for strings. If more than one property, should be separated by commas. Use apply_patch carefully. No extra keys. Be precise. You MUST wrap the JSON in triple backticks. Example: ```json{"file":"...","patch":"..."}``` You must respond with JSON that includes two keys: "file" and "patch". The value for "patch" should be the patch string.
+Optional: keep `.env` synced with your hosting provider for analytics/newsletter/lead capture to function.
