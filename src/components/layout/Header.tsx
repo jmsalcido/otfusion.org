@@ -1,115 +1,132 @@
-import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { useLocale } from '../../i18n/LocaleContext'
+import { scrollToSection } from '../../lib/scrollToSection'
+
+const brandInitials = ['J', 'S']
 
 export const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const { t, locale, setLocale } = useLocale()
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+  const navItems = [
+    { id: 'home', label: t.nav.home },
+    { id: 'expertise', label: t.nav.expertise },
+    { id: 'ventures', label: t.nav.ventures },
+    { id: 'timeline', label: t.nav.timeline },
+    { id: 'contact', label: t.nav.contact }
+  ]
 
-  const closeMenu = () => {
-    setIsMenuOpen(false)
-  }
-
-  const scrollToSection = (sectionId: string) => {
-    closeMenu()
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
-  const scrollToTop = () => {
-    closeMenu()
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+  const handleNavigate = (sectionId: string) => {
+    scrollToSection(sectionId)
+    setMenuOpen(false)
   }
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <div className="w-12 h-12 mr-3">
-              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <path fill="currentColor" className="text-gray-900 dark:text-white"
-                      d="M262.97 19.438c-3.533.036-7.074.17-10.595.375 37.426 5.91 74.12 23.423 102.188 49.624-55.762-26.124-129.46-27.253-186.875-3.5 10.37-9.73 21.777-17.51 33.875-23.343C48.768 80.06-6.44 197.116 56.72 343.938c-16.45-26.78-29.106-55.588-35.626-84.688-5.23 74.055 32.02 134.952 102.47 197.406.06.063.124.126.186.188 12.107 12.125 24.238 22.045 32.875 27.03 64.588 37.292 121.345-63.365 57.78-100.062-11.465-6.62-33.518-14.218-56.56-18.875-76.657-36.295-93.91-155.886-20.282-240.687-6.654 16.82-11.594 34.836-14.844 53.375 76.21-134.99 312.3-129.124 324.124 72.063-10.722-61.622-53.708-113.837-121.03-135.344 56.69 23.942 96.28 79.752 96.28 145.25 0 94.252-72.826 148.403-154.594 165.625 42.582 2.34 94.684-13.826 125.438-36.314-23.357 39.58-72.146 67.082-123.25 81.594 72.736-2.804 136.515-41.146 175.406-97.375-10.316 11.652-22.718 22.04-36.78 30.97 46.54-55.267 70.795-137.97 61.31-210.25 8.428 16.284 13.583 33.51 15.782 51.374C485.26 97.63 372.46 18.3 262.97 19.437z"/>
-              </svg>
-            </div>
-            <Link to="/" onClick={scrollToTop} className="text-2xl font-bold text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
-              OTFusion
-            </Link>
-          </div>
-          
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              <button onClick={() => scrollToSection('services')} className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</button>
-              <button onClick={() => scrollToSection('about')} className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">About</button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</button>
-              <Link to="/projects" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</Link>
-              <a href="https://blog.otfusion.org" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
-            </div>
-          </div>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#d8d7d2] bg-[#f8f8f5]/90 backdrop-blur-sm">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+        <button
+          onClick={() => handleNavigate('home')}
+          className="flex items-center gap-2 text-sm font-semibold tracking-[0.3em] text-[#0f1c2e]"
+        >
+          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#cfd2d5] text-xs text-[#0b1f3a]">
+            {brandInitials.join('·')}
+          </span>
+          José M. Salcido
+        </button>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+        <nav className="hidden items-center gap-8 text-sm text-[#4b5563] md:flex">
+          {navItems.map((item) => (
             <button
-              onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
-              aria-expanded="false"
+              key={item.id}
+              onClick={() => handleNavigate(item.id)}
+              className="transition-colors hover:text-[#0f1c2e]"
             >
-              <span className="sr-only">Open main menu</span>
-              {/* Icon when menu is closed */}
-              <svg className={`${isMenuOpen ? 'hidden' : 'block'} h-6 w-6`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-              {/* Icon when menu is open */}
-              <svg className={`${isMenuOpen ? 'block' : 'hidden'} h-6 w-6`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              {item.label}
             </button>
+          ))}
+          <div className="flex items-center rounded-full border border-[#cfd2d5] bg-white text-xs font-semibold uppercase tracking-[0.3em]">
+            {(['en', 'es'] as const).map((option, index) => {
+              const isActive = locale === option
+              return (
+                <button
+                  key={option}
+                  onClick={() => setLocale(option)}
+                  className={`px-3 py-1 transition-colors first:rounded-l-full last:rounded-r-full ${
+                    isActive
+                      ? 'bg-[#0b1f3a] text-white'
+                      : 'text-[#0b1f3a] hover:bg-[#f0f2f6] hover:text-[#0f1c2e]'
+                  }`}
+                  style={
+                    index === 1
+                      ? { borderLeft: '1px solid rgba(15, 28, 46, 0.1)' }
+                      : { borderRight: '1px solid rgba(15, 28, 46, 0.1)' }
+                  }
+                >
+                  {option.toUpperCase()}
+                </button>
+              )
+            })}
+          </div>
+        </nav>
+
+        <button
+          onClick={() => setMenuOpen((prev) => !prev)}
+          className="md:hidden"
+          aria-label="Toggle navigation"
+        >
+          <span className="sr-only">Toggle menu</span>
+          <div className="flex flex-col gap-1.5">
+            {[0, 1, 2].map((index) => (
+              <span
+                key={index}
+                className={`h-0.5 w-6 origin-center bg-[#0f1c2e] transition-transform ${
+                  menuOpen && index === 0 ? 'translate-y-2 rotate-45' : ''
+                } ${menuOpen && index === 1 ? 'opacity-0' : ''} ${
+                  menuOpen && index === 2 ? '-translate-y-2 -rotate-45' : ''
+                }`}
+              />
+            ))}
+          </div>
+        </button>
+      </div>
+      {menuOpen && (
+        <div className="border-t border-[#d8d7d2] bg-[#f8f8f5]/95 px-4 py-4 md:hidden">
+          <div className="flex flex-col gap-3 text-sm text-[#4b5563]">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleNavigate(item.id)}
+                className="text-left"
+              >
+                {item.label}
+              </button>
+            ))}
+            <div className="inline-flex w-max items-center rounded-full border border-[#cfd2d5] bg-white text-xs font-semibold uppercase tracking-[0.3em]">
+              {(['en', 'es'] as const).map((option, index) => {
+                const isActive = locale === option
+                return (
+                  <button
+                    key={option}
+                    onClick={() => setLocale(option)}
+                    className={`px-3 py-1 transition-colors first:rounded-l-full last:rounded-r-full ${
+                      isActive
+                        ? 'bg-[#0b1f3a] text-white'
+                        : 'text-[#0b1f3a] hover:bg-[#f0f2f6] hover:text-[#0f1c2e]'
+                    }`}
+                    style={
+                      index === 1
+                        ? { borderLeft: '1px solid rgba(15, 28, 46, 0.1)' }
+                        : { borderRight: '1px solid rgba(15, 28, 46, 0.1)' }
+                    }
+                  >
+                    {option.toUpperCase()}
+                  </button>
+                )
+              })}
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Mobile menu */}
-      <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <button 
-            onClick={() => scrollToSection('services')}
-            className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors w-full text-left"
-          >
-            Services
-          </button>
-          <button 
-            onClick={() => scrollToSection('about')}
-            className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors w-full text-left"
-          >
-            About
-          </button>
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors w-full text-left"
-          >
-            Contact
-          </button>
-          <Link 
-            to="/projects" 
-            onClick={closeMenu}
-            className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors"
-          >
-            Projects
-          </Link>
-          <a 
-            href="https://blog.otfusion.org" 
-            onClick={closeMenu}
-            className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors"
-          >
-            Blog
-          </a>
-        </div>
-      </div>
-    </nav>
+      )}
+    </header>
   )
-} 
+}

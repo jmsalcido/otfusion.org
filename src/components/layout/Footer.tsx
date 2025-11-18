@@ -1,11 +1,15 @@
+import { useLocale } from '../../i18n/LocaleContext'
+
 export const Footer = () => {
+  const { t } = useLocale()
+  const year = new Date().getFullYear()
+
   return (
-    <footer className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-200 dark:border-gray-700">
-      <div className="max-w-7xl mx-auto text-center">
-        <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 leading-relaxed">
-          © {new Date().getFullYear()} OTFusion. All rights reserved. | Built with ❤️ and modern technology
-        </p>
+    <footer className="border-t border-[#d8d7d2] bg-[#f8f8f5]">
+      <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-8 text-sm text-[#6b7280] sm:flex-row sm:items-center sm:justify-between">
+        <p>© {year} José M. Salcido</p>
+        <p>{t.footer.message}</p>
       </div>
     </footer>
   )
-} 
+}
