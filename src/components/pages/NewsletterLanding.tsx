@@ -25,7 +25,8 @@ export const NewsletterLanding = () => {
       title: seo.title,
       description: seo.description,
       url: 'https://www.otfusion.org/carta-stoica',
-      image: 'https://otfusion.org/og-image.jpg',
+      image:
+        'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80&sat=-100',
       type: 'article',
       lang: locale
     })

@@ -8,7 +8,8 @@ type Status = 'idle' | 'submitting' | 'success' | 'error'
 type TrackingContext = Record<string, string>
 
 const PAGE_ID = 'pensar-claro'
-const OG_IMAGE_URL = 'https://otfusion.org/og-image.jpg'
+const OG_IMAGE_URL =
+  'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80&sat=-100'
 
 const ghostEndpoint = (() => {
   const site = import.meta.env.VITE_GHOST_SITE
