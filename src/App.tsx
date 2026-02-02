@@ -10,12 +10,14 @@ import { Newsletter } from './components/sections/Newsletter'
 import { Contact } from './components/sections/Contact'
 import { NotFound } from './components/pages/NotFound'
 import { NewsletterLanding } from './components/pages/NewsletterLanding'
+import { PensarClaroLanding } from './components/pages/PensarClaroLanding'
 
 const getRoute = () => {
   if (typeof window === 'undefined') return 'home'
   const path = window.location.pathname.replace(/\/+$/, '') || '/'
   if (path === '/' || path === '/index.html') return 'home'
   if (path === '/carta-stoica') return 'carta-stoica'
+  if (path === '/pensar-claro') return 'pensar-claro'
   return 'not-found'
 }
 
@@ -39,6 +41,8 @@ function App() {
         </div>
       ) : route === 'carta-stoica' ? (
         <NewsletterLanding />
+      ) : route === 'pensar-claro' ? (
+        <PensarClaroLanding />
       ) : (
         <NotFound />
       )}
