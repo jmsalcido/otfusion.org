@@ -1,5 +1,6 @@
-import { type FormEvent, useState } from 'react'
+import { type FormEvent, useEffect, useState } from 'react'
 import { useLocale } from '../../i18n/LocaleContext'
+import { applySeo } from '../../lib/seo'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -13,6 +14,20 @@ export const NewsletterLanding = () => {
   const { t, locale, setLocale } = useLocale()
   const [status, setStatus] = useState<Status>('idle')
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const seo = {
+    title: 'Carta Stoica | OTFusion',
+    description: 'Ensayos breves sobre liderazgo, sistemas y paciencia.'
+  }
+
+  useEffect(() => {
+    applySeo({
+      title: seo.title,
+      description: seo.description,
+      url: 'https://otfusion.org/carta-stoica',
+      image: 'https://otfusion.org/og-image.jpg',
+      lang: locale
+    })
+  }, [locale, seo.description, seo.title])
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
