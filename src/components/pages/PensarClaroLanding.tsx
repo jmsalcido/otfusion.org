@@ -1,6 +1,7 @@
 import { type FormEvent, useEffect, useRef, useState } from 'react'
 import { usePostHog } from 'posthog-js/react'
 import { useLocale } from '../../i18n/LocaleContext'
+import { applySeo } from '../../lib/seo'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -14,17 +15,6 @@ const ghostEndpoint = (() => {
   if (!site) return null
   return `${site.replace(/\/$/, '')}/members/api/send-magic-link/`
 })()
-
-const upsertMeta = (attribute: 'name' | 'property', key: string, content: string) => {
-  const selector = `meta[${attribute}="${key}"]`
-  let tag = document.head.querySelector(selector)
-  if (!tag) {
-    tag = document.createElement('meta')
-    tag.setAttribute(attribute, key)
-    document.head.appendChild(tag)
-  }
-  tag.setAttribute('content', content)
-}
 
 const buildTrackingContext = () => {
   if (typeof window === 'undefined') return {}
@@ -65,10 +55,6 @@ export const PensarClaroLanding = () => {
   }, [locale, setLocale])
 
   useEffect(() => {
-    document.documentElement.lang = locale
-  }, [locale])
-
-  useEffect(() => {
     const utms = buildTrackingContext()
     if (Object.keys(utms).length > 0) {
       try {
@@ -105,18 +91,14 @@ export const PensarClaroLanding = () => {
 
   useEffect(() => {
     if (typeof window === 'undefined') return
-    document.title = seo.title
-    upsertMeta('name', 'description', seo.description)
-    upsertMeta('property', 'og:title', seo.title)
-    upsertMeta('property', 'og:description', seo.description)
-    upsertMeta('property', 'og:image', OG_IMAGE_URL)
-    upsertMeta('property', 'og:url', `https://otfusion.org/${PAGE_ID}`)
-    upsertMeta('property', 'og:type', 'website')
-    upsertMeta('property', 'twitter:title', seo.title)
-    upsertMeta('property', 'twitter:description', seo.description)
-    upsertMeta('property', 'twitter:image', OG_IMAGE_URL)
-    upsertMeta('property', 'twitter:card', 'summary_large_image')
-  }, [seo.title, seo.description])
+    applySeo({
+      title: seo.title,
+      description: seo.description,
+      url: `https://otfusion.org/${PAGE_ID}`,
+      image: OG_IMAGE_URL,
+      lang: locale
+    })
+  }, [locale, seo.description, seo.title])
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
