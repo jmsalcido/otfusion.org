@@ -85,6 +85,19 @@ export interface Translation {
     formTitle: string
     formDescription: string
   }
+  pensarClaroLanding: {
+    eyebrow: string
+    title: string
+    subtitle: string
+    highlights: string[]
+    subtleLine: string
+    ctaEyebrow: string
+    formTitle: string
+    formDescription: string
+    formPlaceholder: string
+    formButton: string
+    formFootnote: string
+  }
   contact: {
     label: string
     title: string
@@ -289,6 +302,24 @@ export const translations: Record<Locale, Translation> = {
       quoteAuthor: 'Seneca',
       formTitle: 'Join the newsletter',
       formDescription: 'One email at a time. You can unsubscribe whenever you want.'
+    },
+    pensarClaroLanding: {
+      eyebrow: 'Pensar claro',
+      title: 'Think clearly when the business weighs heavy',
+      subtitle:
+        'Short ideas about money, energy, and real decisions. For founders who already run payroll or are close to it.',
+      highlights: [
+        'Decide with a cool head (even when you are tired)',
+        'Avoid expensive mistakes that repeat',
+        'Bring order to the chaos without burning out'
+      ],
+      subtleLine: 'Nothing motivational. No hype.',
+      ctaEyebrow: 'Newsletter',
+      formTitle: 'Join the list',
+      formDescription: 'One email at a time. You can leave whenever you want.',
+      formPlaceholder: 'you@email.com',
+      formButton: 'Receive letters',
+      formFootnote: 'No spam. Only useful signal.'
     },
     contact: {
       label: 'Contact',
@@ -500,6 +531,24 @@ export const translations: Record<Locale, Translation> = {
       quoteAuthor: 'Séneca',
       formTitle: 'Únete a la lista',
       formDescription: 'Un correo a la vez. Puedes salir cuando quieras.'
+    },
+    pensarClaroLanding: {
+      eyebrow: 'Pensar claro',
+      title: 'Pensar claro cuando el negocio pesa',
+      subtitle:
+        'Ideas cortas sobre dinero, energía y decisiones reales. Para founders que ya pagan nómina o están cerca de hacerlo.',
+      highlights: [
+        'Decidir con la cabeza fría (aunque estés cansado)',
+        'Evitar errores caros que se repiten',
+        'Ordenar el caos sin quemarte'
+      ],
+      subtleLine: 'Nada motivacional. Nada de humo.',
+      ctaEyebrow: 'Newsletter',
+      formTitle: 'Únete a la lista',
+      formDescription: 'Un correo a la vez. Puedes salir cuando quieras.',
+      formPlaceholder: 'tu@email.com',
+      formButton: 'Recibir cartas',
+      formFootnote: 'Sin spam. Solo señal útil.'
     },
     contact: {
       label: 'Contacto',
