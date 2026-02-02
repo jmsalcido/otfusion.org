@@ -33,18 +33,11 @@ export const PensarClaroLanding = () => {
   const defaultLocaleSetRef = useRef(false)
 
   const copy = t.pensarClaroLanding
-  const seo =
-    locale === 'es'
-      ? {
-          title: 'Pensar claro cuando el negocio pesa | OTFusion',
-          description:
-            'Newsletter para founders sobre dinero, energía y decisiones reales. Un correo a la vez.'
-        }
-      : {
-          title: 'Think clearly when the business weighs heavy | OTFusion',
-          description:
-            'Newsletter for founders about money, energy, and real decisions. One email at a time.'
-        }
+  const seo = {
+    title: 'Pensar claro cuando el negocio pesa',
+    description:
+      'Newsletter corta sobre dinero, energía y decisiones reales. Para pensar mejor cuando el ruido no te deja.'
+  }
 
   useEffect(() => {
     if (defaultLocaleSetRef.current) return
@@ -94,8 +87,9 @@ export const PensarClaroLanding = () => {
     applySeo({
       title: seo.title,
       description: seo.description,
-      url: `https://otfusion.org/${PAGE_ID}`,
+      url: `https://www.otfusion.org/${PAGE_ID}`,
       image: OG_IMAGE_URL,
+      type: 'website',
       lang: locale
     })
   }, [locale, seo.description, seo.title])

@@ -15,16 +15,18 @@ export const NewsletterLanding = () => {
   const [status, setStatus] = useState<Status>('idle')
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const seo = {
-    title: 'Carta Stoica | OTFusion',
-    description: 'Ensayos breves sobre liderazgo, sistemas y paciencia.'
+    title: 'Carta Estoica | Pensar claro en tiempos difíciles',
+    description:
+      'Una carta semanal sobre claridad, criterio y calma. Inspirada en estoicismo, escrita para la vida real.'
   }
 
   useEffect(() => {
     applySeo({
       title: seo.title,
       description: seo.description,
-      url: 'https://otfusion.org/carta-stoica',
+      url: 'https://www.otfusion.org/carta-stoica',
       image: 'https://otfusion.org/og-image.jpg',
+      type: 'article',
       lang: locale
     })
   }, [locale, seo.description, seo.title])

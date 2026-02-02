@@ -25,10 +25,11 @@ export interface SeoPayload {
   description: string
   url: string
   image: string
+  type?: 'website' | 'article'
   lang?: string
 }
 
-export const applySeo = ({ title, description, url, image, lang }: SeoPayload) => {
+export const applySeo = ({ title, description, url, image, type = 'website', lang }: SeoPayload) => {
   if (lang) {
     document.documentElement.lang = lang
   }
@@ -39,7 +40,7 @@ export const applySeo = ({ title, description, url, image, lang }: SeoPayload) =
   upsertMeta('property', 'og:description', description)
   upsertMeta('property', 'og:image', image)
   upsertMeta('property', 'og:url', url)
-  upsertMeta('property', 'og:type', 'website')
+  upsertMeta('property', 'og:type', type)
   upsertMeta('property', 'twitter:title', title)
   upsertMeta('property', 'twitter:description', description)
   upsertMeta('property', 'twitter:image', image)
