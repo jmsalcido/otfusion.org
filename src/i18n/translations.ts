@@ -74,6 +74,17 @@ export interface Translation {
     note: string
     success: string
   }
+  newsletterLanding: {
+    backLink: string
+    eyebrow: string
+    title: string
+    subtitle: string
+    highlights: string[]
+    quote: string
+    quoteAuthor: string
+    formTitle: string
+    formDescription: string
+  }
   contact: {
     label: string
     title: string
@@ -262,6 +273,22 @@ export const translations: Record<Locale, Translation> = {
       button: 'Get letters',
       note: 'No spam. Just thoughtful signal.',
       success: 'Thank you. The next letter will find you soon.'
+    },
+    newsletterLanding: {
+      backLink: 'Back to site',
+      eyebrow: 'Carta Stoica',
+      title: 'A quiet note on leadership, systems, and patience.',
+      subtitle:
+        'Brief essays in Spanish. Delivered only when there is something worth keeping.',
+      highlights: [
+        'Stoic framing for modern work',
+        'Experiments from product and operations',
+        'Short, practical prompts to think better'
+      ],
+      quote: 'We suffer more in imagination than in reality.',
+      quoteAuthor: 'Seneca',
+      formTitle: 'Join the newsletter',
+      formDescription: 'One email at a time. You can unsubscribe whenever you want.'
     },
     contact: {
       label: 'Contact',
@@ -457,6 +484,22 @@ export const translations: Record<Locale, Translation> = {
       button: 'Recibir cartas',
       note: 'Sin spam. Solo señal reflexiva.',
       success: 'Gracias. La próxima carta te encontrará pronto.'
+    },
+    newsletterLanding: {
+      backLink: 'Volver al sitio',
+      eyebrow: 'Carta Stoica',
+      title: 'Una nota tranquila sobre liderazgo, sistemas y paciencia.',
+      subtitle:
+        'Ensayos breves en español. Solo cuando hay algo que vale la pena guardar.',
+      highlights: [
+        'Marco estoico para el trabajo moderno',
+        'Experimentos de producto y operaciones',
+        'Prompts cortos y prácticos para pensar mejor'
+      ],
+      quote: 'Sufrimos más en la imaginación que en la realidad.',
+      quoteAuthor: 'Séneca',
+      formTitle: 'Únete a la lista',
+      formDescription: 'Un correo a la vez. Puedes salir cuando quieras.'
     },
     contact: {
       label: 'Contacto',

@@ -9,19 +9,22 @@ import { Timeline } from './components/sections/Timeline'
 import { Newsletter } from './components/sections/Newsletter'
 import { Contact } from './components/sections/Contact'
 import { NotFound } from './components/pages/NotFound'
+import { NewsletterLanding } from './components/pages/NewsletterLanding'
 
-const isHomeRoute = () => {
-  if (typeof window === 'undefined') return true
+const getRoute = () => {
+  if (typeof window === 'undefined') return 'home'
   const path = window.location.pathname.replace(/\/+$/, '') || '/'
-  return path === '/' || path === '/index.html'
+  if (path === '/' || path === '/index.html') return 'home'
+  if (path === '/carta-stoica') return 'carta-stoica'
+  return 'not-found'
 }
 
 function App() {
-  const home = isHomeRoute()
+  const route = getRoute()
 
   return (
     <LocaleProvider>
-      {home ? (
+      {route === 'home' ? (
         <div className="min-h-screen bg-[#f5f5f2] text-[#0f1c2e]">
           <Header />
           <main className="pt-16">
@@ -34,6 +37,8 @@ function App() {
           </main>
           <Footer />
         </div>
+      ) : route === 'carta-stoica' ? (
+        <NewsletterLanding />
       ) : (
         <NotFound />
       )}
