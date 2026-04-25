@@ -29,7 +29,7 @@ export const PensarClaroLanding = () => {
   const posthog = usePostHog()
   const [status, setStatus] = useState<Status>('idle')
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
-  const [trackingContext, setTrackingContext] = useState<TrackingContext>({})
+  const trackingContextRef = useRef<TrackingContext>({})
   const viewTrackedRef = useRef(false)
   const defaultLocaleSetRef = useRef(false)
 
@@ -56,7 +56,7 @@ export const PensarClaroLanding = () => {
       } catch (error) {
         console.warn('Unable to store UTM params', error)
       }
-      setTrackingContext(utms)
+      trackingContextRef.current = utms
       return
     }
 
@@ -64,7 +64,7 @@ export const PensarClaroLanding = () => {
       const stored = localStorage.getItem('otfusion_utms')
       if (stored) {
         const parsed = JSON.parse(stored) as TrackingContext
-        setTrackingContext(parsed)
+        trackingContextRef.current = parsed
       }
     } catch (error) {
       console.warn('Unable to read UTM params', error)
@@ -74,14 +74,14 @@ export const PensarClaroLanding = () => {
   useEffect(() => {
     if (viewTrackedRef.current) return
     if (typeof window === 'undefined') return
-    const payload = { page: PAGE_ID, ...trackingContext }
+    const payload = { page: PAGE_ID, ...trackingContextRef.current }
     if (posthog) {
       posthog.capture('signup_view', payload)
     } else {
       console.log('TODO: analytics signup_view', payload)
     }
     viewTrackedRef.current = true
-  }, [posthog, trackingContext])
+  }, [posthog])
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -132,7 +132,7 @@ export const PensarClaroLanding = () => {
       setStatus('success')
       formElement.reset()
 
-      const payload = { page: PAGE_ID, ...trackingContext }
+      const payload = { page: PAGE_ID, ...trackingContextRef.current }
       if (posthog) {
         posthog.capture('signup_submit', payload)
       } else {
@@ -146,10 +146,10 @@ export const PensarClaroLanding = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#f5f5f2] text-[#0f1c2e]">
+    <div className="page-shell min-h-screen">
       <main className="mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="flex items-center justify-end">
-          <div className="flex items-center rounded-full border border-[#cfd2d5] bg-white text-xs font-semibold uppercase tracking-[0.3em]">
+          <div className="flex items-center rounded-full border border-[var(--border-default)] bg-[rgba(17,77,138,0.76)] text-xs font-semibold uppercase tracking-[0.14em] shadow-[var(--shadow-inset)]">
             {(['en', 'es'] as const).map((option, index) => {
               const isActive = locale === option
               return (
@@ -158,13 +158,13 @@ export const PensarClaroLanding = () => {
                   onClick={() => setLocale(option)}
                   className={`px-3 py-1 transition-colors first:rounded-l-full last:rounded-r-full ${
                     isActive
-                      ? 'bg-[#0b1f3a] text-white'
-                      : 'text-[#0b1f3a] hover:bg-[#f0f2f6] hover:text-[#0f1c2e]'
+                      ? 'bg-[var(--primary)] text-[var(--text-main)]'
+                      : 'text-[var(--text-secondary)] hover:bg-[rgba(111,163,194,0.14)] hover:text-[var(--text-primary)]'
                   }`}
                   style={
                     index === 1
-                      ? { borderLeft: '1px solid rgba(15, 28, 46, 0.1)' }
-                      : { borderRight: '1px solid rgba(15, 28, 46, 0.1)' }
+                      ? { borderLeft: '1px solid var(--border-subtle)' }
+                      : { borderRight: '1px solid var(--border-subtle)' }
                   }
                 >
                   {option.toUpperCase()}
@@ -176,32 +176,34 @@ export const PensarClaroLanding = () => {
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
-            <p className="text-xs uppercase tracking-[0.4em] text-[#6b7a90]">{copy.eyebrow}</p>
-            <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">{copy.title}</h1>
-            <p className="mt-4 text-base text-[#324155] sm:text-lg">{copy.subtitle}</p>
+            <span className="rule-accent" aria-hidden="true" />
+            <p className="label">{copy.eyebrow}</p>
+            <h1 className="mt-4">{copy.title}</h1>
+            <p className="lead mt-4">{copy.subtitle}</p>
 
-            <ul className="mt-6 space-y-3 text-sm text-[#324155]">
+            <ul className="mt-6 space-y-3 text-sm text-[var(--text-secondary)]">
               {copy.highlights.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-[#0b1f3a]" />
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--accent-orange)]" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
 
-            <p className="mt-6 text-xs uppercase tracking-[0.3em] text-[#6b7a90]">
+            <p className="label mt-6 text-accent">
               {copy.subtleLine}
             </p>
           </div>
 
-          <div className="rounded-3xl border border-[#1d2b3f] bg-[#0b1f3a] px-6 py-10 text-white shadow-xl sm:px-10">
-            <p className="text-xs uppercase tracking-[0.4em] text-[#8f9fb6]">
+          <div className="card px-6 py-10 sm:px-10">
+            <span className="rule-accent" aria-hidden="true" />
+            <p className="label">
               {copy.ctaEyebrow}
             </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight">{copy.formTitle}</h2>
-            <p className="mt-3 text-sm text-slate-200">{copy.formDescription}</p>
+            <h2 className="mt-4">{copy.formTitle}</h2>
+            <p className="caption mt-3">{copy.formDescription}</p>
             {status === 'success' ? (
-              <p className="mt-6 text-sm text-emerald-300">{t.newsletter.success}</p>
+              <p className="mt-6 text-sm text-[var(--accent-sand)]">{t.newsletter.success}</p>
             ) : (
               <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <input
@@ -209,21 +211,21 @@ export const PensarClaroLanding = () => {
                   name="email"
                   required
                   placeholder={copy.formPlaceholder}
-                  className="flex-1 rounded-full border border-white/30 bg-transparent px-4 py-3 text-sm placeholder:text-[#b0bccd] focus:border-white focus:outline-none"
+                  className="field flex-1 px-4 py-3 text-sm"
                 />
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#0b1f3a] transition hover:bg-[#f0f2f7] disabled:opacity-60"
+                  className="btn btn-primary disabled:opacity-60"
                 >
                   {status === 'submitting' ? 'Sending...' : copy.formButton}
                 </button>
               </form>
             )}
             {status === 'error' && errorMessage && (
-              <p className="mt-4 text-sm text-red-200">{errorMessage}</p>
+              <p className="mt-4 text-sm text-[var(--accent-sand)]">{errorMessage}</p>
             )}
-            <p className="mt-4 text-xs uppercase tracking-[0.3em] text-[#8f9fb6]">
+            <p className="label mt-4">
               {copy.formFootnote}
             </p>
           </div>

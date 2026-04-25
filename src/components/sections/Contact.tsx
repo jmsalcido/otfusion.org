@@ -58,7 +58,7 @@ export const Contact = () => {
   const form = t.contact.form
 
   return (
-    <section id="contact" className="px-4 py-20 sm:px-6 lg:px-0">
+    <section id="contact" className="w-full px-4 py-20 sm:px-6 lg:px-0">
       <div className="mx-auto max-w-4xl space-y-10">
         <SectionHeader
           label={t.contact.label}
@@ -67,31 +67,31 @@ export const Contact = () => {
           align="center"
         />
         {status === 'success' ? (
-          <div className="rounded-3xl border border-[#9fd5c2] bg-[#e8f6f1] px-6 py-12 text-center text-[#0f3d2f]">
-            <p className="text-sm uppercase tracking-[0.3em]">{form.success}</p>
+          <div className="card px-6 py-12 text-center">
+            <p className="label text-accent">{form.success}</p>
           </div>
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="rounded-3xl border border-[#e1e0db] bg-white px-6 py-10 shadow-sm sm:px-10"
+            className="card px-6 py-10 sm:px-10"
           >
             <div className="grid gap-6 md:grid-cols-2">
-              <label className="text-sm text-[#4a4f57]">
+              <label className="caption">
                 {form.name}
                 <input
                   type="text"
                   name="name"
                   required
-                  className="mt-2 w-full rounded-xl border border-[#dcdad4] px-4 py-3 text-[#0f1c2e] focus:border-[#0b1f3a] focus:outline-none"
+                  className="field mt-2 px-4 py-3"
                 />
               </label>
-              <label className="text-sm text-[#4a4f57]">
+              <label className="caption">
                 {form.email}
                 <input
                   type="email"
                   name="email"
                   required
-                  className="mt-2 w-full rounded-xl border border-[#dcdad4] px-4 py-3 text-[#0f1c2e] focus:border-[#0b1f3a] focus:outline-none"
+                  className="field mt-2 px-4 py-3"
                 />
               </label>
             </div>
@@ -99,13 +99,13 @@ export const Contact = () => {
               Context
               <input type="text" name="context" tabIndex={-1} autoComplete="off" className="hidden" />
             </label>
-            <label className="mt-6 block text-sm text-[#4a4f57]">
+            <label className="caption mt-6 block">
               {form.purposeLabel}
               <select
                 name="purpose"
                 required
                 defaultValue=""
-                className="mt-2 w-full rounded-xl border border-[#dcdad4] px-4 py-3 text-[#0f1c2e] focus:border-[#0b1f3a] focus:outline-none"
+                className="field mt-2 px-4 py-3"
               >
                 <option value="" disabled hidden>
                   —
@@ -117,22 +117,22 @@ export const Contact = () => {
                 ))}
               </select>
             </label>
-            <label className="mt-6 block text-sm text-[#4a4f57]">
+            <label className="caption mt-6 block">
               {form.message}
               <textarea
                 name="message"
                 rows={5}
                 required
-                className="mt-2 w-full rounded-2xl border border-[#dcdad4] px-4 py-3 text-[#0f1c2e] focus:border-[#0b1f3a] focus:outline-none"
+                className="field mt-2 px-4 py-3"
               />
             </label>
             {errorMessage && (
-              <p className="mt-6 text-center text-sm text-red-500">{errorMessage}</p>
+              <p className="mt-6 text-center text-sm text-[var(--accent-sand)]">{errorMessage}</p>
             )}
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className="mt-8 w-full rounded-full border border-[#0b1f3a] bg-[#0b1f3a] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-[#122c50] disabled:opacity-70"
+              className="btn btn-primary mt-8 w-full disabled:opacity-70"
             >
               {status === 'submitting' ? 'Sending...' : form.submit}
             </button>

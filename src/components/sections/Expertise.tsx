@@ -13,16 +13,16 @@ export const Expertise = () => {
           {content.items.map((item) => (
             <article
               key={item.title}
-              className="flex h-full flex-col justify-between rounded-2xl border border-[#e1e0db] bg-white/90 p-6 shadow-[inset_0_0_0_1px_rgba(15,28,46,0.05)]"
+              className="card flex h-full flex-col justify-between p-6 transition-[border-color,box-shadow] duration-200 hover:border-[var(--border-default)] hover:shadow-[var(--shadow-deep)]"
             >
               <div className="space-y-3">
-                <h3 className="text-xl font-semibold text-[#0b1f3a]">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-[#4a4f57]">{item.body}</p>
+                <h3 className="text-2xl">{item.title}</h3>
+                <p className="caption leading-relaxed">{item.body}</p>
               </div>
-              <ul className="mt-6 space-y-2 text-sm text-[#4a4f57]">
+              <ul className="mt-6 space-y-3 text-sm text-[var(--text-secondary)]">
                 {item.highlights.map((highlight) => (
                   <li key={highlight} className="flex items-center gap-2">
-                    <span className="h-1 w-8 bg-[#0b1f3a]/40" aria-hidden="true" />
+                    <span className="h-0.5 w-8 bg-[var(--accent-orange)]" aria-hidden="true" />
                     <span>{highlight}</span>
                   </li>
                 ))}

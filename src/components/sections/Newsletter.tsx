@@ -59,12 +59,13 @@ export const Newsletter = () => {
 
   return (
     <section id="newsletter" className="px-4 py-20 sm:px-6 lg:px-0">
-      <div className="mx-auto max-w-4xl rounded-3xl border border-[#1d2b3f] bg-[#0b1f3a] px-6 py-12 text-white shadow-xl sm:px-10">
-        <p className="text-xs uppercase tracking-[0.4em] text-[#8f9fb6]">{t.newsletter.label}</p>
-        <h3 className="mt-4 text-3xl font-semibold tracking-tight">{t.newsletter.title}</h3>
-        <p className="mt-3 text-base text-slate-200">{t.newsletter.description}</p>
+      <div className="card mx-auto max-w-4xl px-6 py-12 sm:px-10">
+        <span className="rule-accent" aria-hidden="true" />
+        <p className="label">{t.newsletter.label}</p>
+        <h3 className="mt-4">{t.newsletter.title}</h3>
+        <p className="mt-3 max-w-2xl text-[var(--text-secondary)]">{t.newsletter.description}</p>
         {status === 'success' ? (
-          <p className="mt-6 text-sm text-emerald-300">{t.newsletter.success}</p>
+          <p className="mt-6 text-sm text-[var(--accent-sand)]">{t.newsletter.success}</p>
         ) : (
           <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-3 sm:flex-row">
             <input
@@ -72,21 +73,21 @@ export const Newsletter = () => {
               name="email"
               required
               placeholder={t.newsletter.placeholder}
-              className="flex-1 rounded-full border border-white/30 bg-transparent px-4 py-3 text-sm placeholder:text-[#b0bccd] focus:border-white focus:outline-none"
+              className="field flex-1 px-4 py-3 text-sm"
             />
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#0b1f3a] transition hover:bg-[#f0f2f7] disabled:opacity-60"
+              className="btn btn-primary disabled:opacity-60"
             >
               {status === 'submitting' ? 'Sending...' : t.newsletter.button}
             </button>
           </form>
         )}
         {status === 'error' && errorMessage && (
-          <p className="mt-4 text-sm text-red-200">{errorMessage}</p>
+          <p className="mt-4 text-sm text-[var(--accent-sand)]">{errorMessage}</p>
         )}
-        <p className="mt-3 text-xs uppercase tracking-[0.3em] text-[#8f9fb6]">{t.newsletter.note}</p>
+        <p className="label mt-3">{t.newsletter.note}</p>
       </div>
     </section>
   )
