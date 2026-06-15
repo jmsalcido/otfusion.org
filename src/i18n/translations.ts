@@ -114,6 +114,19 @@ export interface Translation {
   }
   footer: {
     message: string
+    privacy: string
+  }
+  privacyPolicy: {
+    label: string
+    title: string
+    lastUpdated: string
+    intro: string
+    sections: {
+      title: string
+      body: string[]
+    }[]
+    contactTitle: string
+    contactBody: string
   }
   notFound: {
     label: string
@@ -343,7 +356,62 @@ export const translations: Record<Locale, Translation> = {
       }
     },
     footer: {
-      message: 'Technology built with intention.'
+      message: 'Technology built with intention.',
+      privacy: 'Privacy Policy'
+    },
+    privacyPolicy: {
+      label: 'Privacy Policy',
+      title: 'Privacy Policy',
+      lastUpdated: 'Last updated: June 15, 2026',
+      intro:
+        'This policy explains how OTFusion collects, uses, and protects information when you visit this website, subscribe to the newsletter, or contact José M. Salcido.',
+      sections: [
+        {
+          title: 'Information collected',
+          body: [
+            'When you use the contact form, the site may collect your name, email address, focus area, and message so your request can be answered.',
+            'When you subscribe to the newsletter, the site may collect your email address and send it to the configured newsletter provider.',
+            'The site may collect basic analytics information such as page views, device/browser details, referrer, and general location data through privacy-conscious analytics tooling.'
+          ]
+        },
+        {
+          title: 'How information is used',
+          body: [
+            'Information is used to respond to messages, deliver requested newsletter emails, understand site performance, and improve the content and experience of the website.',
+            'Your information is not sold. It is only shared with service providers needed to operate this site, such as newsletter, analytics, hosting, and contact workflow tools.'
+          ]
+        },
+        {
+          title: 'Cookies and analytics',
+          body: [
+            'This website may use cookies or similar technologies for analytics and basic functionality. You can control cookies through your browser settings.',
+            'Analytics are used to understand aggregate visitor behavior and are not intended to identify you personally.'
+          ]
+        },
+        {
+          title: 'Data retention',
+          body: [
+            'Contact form messages and newsletter subscription records are kept only as long as reasonably needed for communication, operations, legal compliance, or legitimate business purposes.',
+            'You may request that your information be updated or deleted, subject to legal or operational requirements.'
+          ]
+        },
+        {
+          title: 'Your choices',
+          body: [
+            'You can unsubscribe from newsletter emails using the unsubscribe link in any message.',
+            'You can request access, correction, or deletion of personal information by using the contact form on this site.'
+          ]
+        },
+        {
+          title: 'Changes to this policy',
+          body: [
+            'This policy may be updated from time to time. The updated version will be posted on this page with a new last updated date.'
+          ]
+        }
+      ],
+      contactTitle: 'Contact',
+      contactBody:
+        'For privacy questions or requests, use the contact form at otfusion.org/contact.'
     },
     notFound: {
       label: 'Off the map',
@@ -572,7 +640,62 @@ export const translations: Record<Locale, Translation> = {
       }
     },
     footer: {
-      message: 'Tecnología construida con intención.'
+      message: 'Tecnología construida con intención.',
+      privacy: 'Política de privacidad'
+    },
+    privacyPolicy: {
+      label: 'Política de privacidad',
+      title: 'Política de privacidad',
+      lastUpdated: 'Última actualización: 15 de junio de 2026',
+      intro:
+        'Esta política explica cómo OTFusion recopila, usa y protege información cuando visitas este sitio web, te suscribes al newsletter o contactas a José M. Salcido.',
+      sections: [
+        {
+          title: 'Información recopilada',
+          body: [
+            'Cuando usas el formulario de contacto, el sitio puede recopilar tu nombre, correo electrónico, área de enfoque y mensaje para responder a tu solicitud.',
+            'Cuando te suscribes al newsletter, el sitio puede recopilar tu correo electrónico y enviarlo al proveedor configurado para el newsletter.',
+            'El sitio puede recopilar información básica de analítica, como vistas de página, detalles de dispositivo/navegador, referencia y ubicación general mediante herramientas de analítica con enfoque de privacidad.'
+          ]
+        },
+        {
+          title: 'Cómo se usa la información',
+          body: [
+            'La información se usa para responder mensajes, entregar correos solicitados del newsletter, entender el desempeño del sitio y mejorar el contenido y la experiencia del sitio web.',
+            'Tu información no se vende. Solo se comparte con proveedores de servicio necesarios para operar este sitio, como herramientas de newsletter, analítica, hosting y flujos de contacto.'
+          ]
+        },
+        {
+          title: 'Cookies y analítica',
+          body: [
+            'Este sitio web puede usar cookies o tecnologías similares para analítica y funcionalidad básica. Puedes controlar las cookies desde la configuración de tu navegador.',
+            'La analítica se usa para entender comportamiento agregado de visitantes y no tiene la intención de identificarte personalmente.'
+          ]
+        },
+        {
+          title: 'Retención de datos',
+          body: [
+            'Los mensajes del formulario de contacto y registros de suscripción al newsletter se conservan solo durante el tiempo razonablemente necesario para comunicación, operaciones, cumplimiento legal o fines legítimos del negocio.',
+            'Puedes solicitar que tu información sea actualizada o eliminada, sujeto a requisitos legales u operativos.'
+          ]
+        },
+        {
+          title: 'Tus opciones',
+          body: [
+            'Puedes darte de baja del newsletter usando el enlace de cancelación incluido en cualquier correo.',
+            'Puedes solicitar acceso, corrección o eliminación de información personal usando el formulario de contacto de este sitio.'
+          ]
+        },
+        {
+          title: 'Cambios a esta política',
+          body: [
+            'Esta política puede actualizarse ocasionalmente. La versión actualizada se publicará en esta página con una nueva fecha de última actualización.'
+          ]
+        }
+      ],
+      contactTitle: 'Contacto',
+      contactBody:
+        'Para preguntas o solicitudes de privacidad, usa el formulario de contacto en otfusion.org/contact.'
     },
     notFound: {
       label: 'Fuera del mapa',

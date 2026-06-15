@@ -14,6 +14,7 @@ import { NotFound } from './components/pages/NotFound'
 import { NewsletterLanding } from './components/pages/NewsletterLanding'
 import { PensarClaroLanding } from './components/pages/PensarClaroLanding'
 import { ContactPage } from './components/pages/ContactPage'
+import { PrivacyPolicy } from './components/pages/PrivacyPolicy'
 import { applySeo } from './lib/seo'
 import { consumeRememberedScrollSection, scrollToSection } from './lib/scrollToSection'
 
@@ -68,6 +69,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/index.html" element={<HomePage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/carta-stoica" element={<NewsletterLanding />} />
           <Route path="/pensar-claro" element={<PensarClaroLanding />} />
           <Route path="*" element={<NotFound />} />
