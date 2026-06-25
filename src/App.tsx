@@ -15,6 +15,7 @@ import { NewsletterLanding } from './components/pages/NewsletterLanding'
 import { PensarClaroLanding } from './components/pages/PensarClaroLanding'
 import { ContactPage } from './components/pages/ContactPage'
 import { PrivacyPolicy } from './components/pages/PrivacyPolicy'
+import { IndieHackPage } from './components/pages/IndieHackPage'
 import { applySeo } from './lib/seo'
 import { consumeRememberedScrollSection, scrollToSection } from './lib/scrollToSection'
 
@@ -73,6 +74,7 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/carta-stoica" element={<NewsletterLanding />} />
           <Route path="/pensar-claro" element={<PensarClaroLanding />} />
+          <Route path="/indie-hack" element={<IndieHackPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </LocaleProvider>

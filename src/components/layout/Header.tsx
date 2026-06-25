@@ -12,24 +12,25 @@ export const Header = () => {
   const navigate = useNavigate()
 
   const navItems = [
-    { id: 'home', label: t.nav.home },
-    { id: 'expertise', label: t.nav.expertise },
-    { id: 'ventures', label: t.nav.ventures },
-    { id: 'timeline', label: t.nav.timeline },
-    { id: 'contact', label: t.nav.contact }
+    { id: 'home', label: t.nav.home, type: 'section' },
+    { id: 'expertise', label: t.nav.expertise, type: 'section' },
+    { id: 'ventures', label: t.nav.ventures, type: 'section' },
+    { id: 'timeline', label: t.nav.timeline, type: 'section' },
+    { id: 'indie-hack', label: t.nav.indieHack, type: 'route', path: '/indie-hack' },
+    { id: 'contact', label: t.nav.contact, type: 'route', path: '/contact' }
   ]
 
-  const handleNavigate = (sectionId: string) => {
-    if (sectionId === 'contact') {
-      navigate('/contact')
+  const handleNavigate = (item: (typeof navItems)[number]) => {
+    if (item.type === 'route' && item.path) {
+      navigate(item.path)
       setMenuOpen(false)
       return
     }
 
     if (location.pathname === '/') {
-      scrollToSection(sectionId)
+      scrollToSection(item.id)
     } else {
-      rememberScrollSection(sectionId)
+      rememberScrollSection(item.id)
       navigate('/')
     }
 
@@ -40,7 +41,7 @@ export const Header = () => {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--border-subtle)] bg-[rgba(6,60,107,0.82)] backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <button
-          onClick={() => handleNavigate('home')}
+          onClick={() => handleNavigate(navItems[0])}
           className="font-display flex items-center gap-3 text-sm font-semibold tracking-[0.14em] text-[var(--text-primary)] transition-colors hover:text-[var(--accent-sand)]"
         >
           <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border-default)] bg-[rgba(17,77,138,0.72)] text-xs text-[var(--accent-sand)] shadow-[var(--shadow-inset)]">
@@ -53,7 +54,7 @@ export const Header = () => {
           {navItems.map((item) => (
             <button
               key={item.id}
-              onClick={() => handleNavigate(item.id)}
+              onClick={() => handleNavigate(item)}
               className="transition-colors hover:text-[var(--text-primary)]"
             >
               {item.label}
@@ -110,7 +111,7 @@ export const Header = () => {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => handleNavigate(item.id)}
+                onClick={() => handleNavigate(item)}
                 className="text-left transition-colors hover:text-[var(--text-primary)]"
               >
                 {item.label}

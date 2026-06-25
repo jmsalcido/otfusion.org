@@ -36,6 +36,7 @@ export interface Translation {
     expertise: string
     ventures: string
     timeline: string
+    indieHack: string
     contact: string
   }
   hero: {
@@ -98,6 +99,31 @@ export interface Translation {
     formButton: string
     formFootnote: string
   }
+  indieHack: {
+    label: string
+    title: string
+    description: string
+    summaryLabel: string
+    activeProjects: string
+    inactiveProjects: string
+    projectGroupLabel: string
+    loading: string
+    error: string
+    empty: string
+    emptyGroup: string
+    descriptionFallback: string
+    dateUnavailable: string
+    active: string
+    inactive: string
+    created: string
+    mmr: string
+    oneTime: string
+    summary: {
+      projects: string
+      mmr: string
+      oneTime: string
+    }
+  }
   contact: {
     label: string
     title: string
@@ -144,6 +170,7 @@ export const translations: Record<Locale, Translation> = {
       expertise: 'Expertise',
       ventures: 'Ventures',
       timeline: 'Timeline',
+      indieHack: 'Indie Hack',
       contact: 'Contact'
     },
     hero: {
@@ -334,6 +361,32 @@ export const translations: Record<Locale, Translation> = {
       formButton: 'Receive letters',
       formFootnote: 'No spam. Only useful signal.'
     },
+    indieHack: {
+      label: 'Indie Hack',
+      title: 'Project counter',
+      description:
+        'A live snapshot of the projects I am building, maintaining, and retiring as I keep experimenting in public.',
+      summaryLabel: 'Counter',
+      activeProjects: 'Active Projects',
+      inactiveProjects: 'Inactive Projects',
+      projectGroupLabel: 'Projects',
+      loading: 'Loading project data...',
+      error: 'Project data is unavailable right now. Please try again shortly.',
+      empty: 'No projects are available yet.',
+      emptyGroup: 'No projects in this group.',
+      descriptionFallback: 'No description available.',
+      dateUnavailable: 'Date unavailable',
+      active: 'Active',
+      inactive: 'Inactive',
+      created: 'Created',
+      mmr: 'MMR',
+      oneTime: 'One-time',
+      summary: {
+        projects: 'projects',
+        mmr: 'MMR',
+        oneTime: 'One-time'
+      }
+    },
     contact: {
       label: 'Contact',
       title: 'Start a conversation',
@@ -428,6 +481,7 @@ export const translations: Record<Locale, Translation> = {
       expertise: 'Experiencia',
       ventures: 'Proyectos',
       timeline: 'Trayectoria',
+      indieHack: 'Indie Hack',
       contact: 'Contacto'
     },
     hero: {
@@ -617,6 +671,32 @@ export const translations: Record<Locale, Translation> = {
       formPlaceholder: 'tu@email.com',
       formButton: 'Recibir cartas',
       formFootnote: 'Sin spam. Solo señal útil.'
+    },
+    indieHack: {
+      label: 'Indie Hack',
+      title: 'Contador de proyectos',
+      description:
+        'Una vista viva de los proyectos que estoy construyendo, manteniendo y cerrando mientras sigo experimentando en público.',
+      summaryLabel: 'Contador',
+      activeProjects: 'Proyectos activos',
+      inactiveProjects: 'Proyectos inactivos',
+      projectGroupLabel: 'Proyectos',
+      loading: 'Cargando datos de proyectos...',
+      error: 'Los datos de proyectos no están disponibles por ahora. Intenta de nuevo en un momento.',
+      empty: 'Todavía no hay proyectos disponibles.',
+      emptyGroup: 'No hay proyectos en este grupo.',
+      descriptionFallback: 'No hay descripción disponible.',
+      dateUnavailable: 'Fecha no disponible',
+      active: 'Activo',
+      inactive: 'Inactivo',
+      created: 'Creado',
+      mmr: 'MRR',
+      oneTime: 'Pago único',
+      summary: {
+        projects: 'proyectos',
+        mmr: 'MRR',
+        oneTime: 'Pago único'
+      }
     },
     contact: {
       label: 'Contacto',
