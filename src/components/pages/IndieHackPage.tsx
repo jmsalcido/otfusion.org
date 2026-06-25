@@ -16,6 +16,7 @@ type ProjectRow = {
   'One Time Payments'?: unknown
   'Creation Date'?: unknown
   Alive?: unknown
+  URL?: unknown
 }
 
 interface Project {
@@ -26,6 +27,7 @@ interface Project {
   oneTimePayments: number
   creationDate: string | null
   isActive: boolean
+  url: string | null
 }
 
 type FetchStatus = 'loading' | 'success' | 'error'
@@ -45,6 +47,19 @@ const toNumber = (value: unknown) => {
   return 0
 }
 
+const toUrl = (value: unknown) => {
+  if (typeof value !== 'string') return null
+  const trimmed = value.trim()
+  if (!trimmed) return null
+
+  try {
+    const url = new URL(trimmed)
+    return url.protocol === 'https:' || url.protocol === 'http:' ? url.toString() : null
+  } catch {
+    return null
+  }
+}
+
 const normalizeProject = (row: ProjectRow, index: number, descriptionFallback: string): Project => {
   return {
     id: toText(row.UUID, `project-${index}`),
@@ -53,7 +68,8 @@ const normalizeProject = (row: ProjectRow, index: number, descriptionFallback: s
     monthlyRecurringRevenue: toNumber(row.MMR),
     oneTimePayments: toNumber(row['One Time Payments']),
     creationDate: typeof row['Creation Date'] === 'string' ? row['Creation Date'] : null,
-    isActive: row.Alive === true
+    isActive: row.Alive === true,
+    url: toUrl(row.URL)
   }
 }
 
@@ -125,6 +141,7 @@ interface ProjectCardProps {
     mmr: string
     oneTime: string
     dateUnavailable: string
+    visitProject: string
   }
   formatMoney: (value: number) => string
   formatDate: (value: string | null) => string
@@ -149,6 +166,16 @@ const ProjectCard = ({ project, copy, formatMoney, formatDate }: ProjectCardProp
     </div>
     <h3 className="mt-5 text-2xl">{project.name}</h3>
     <p className="mt-3 flex-1 text-sm leading-7">{project.description}</p>
+    {project.url && (
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noreferrer"
+        className="btn btn-secondary mt-5 w-full sm:w-max"
+      >
+        {copy.visitProject}
+      </a>
+    )}
     <dl className="mt-6 grid grid-cols-2 gap-3 border-t border-[var(--border-subtle)] pt-4">
       <div>
         <dt className="label">{copy.mmr}</dt>

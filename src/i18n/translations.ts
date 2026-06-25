@@ -118,6 +118,7 @@ export interface Translation {
     created: string
     mmr: string
     oneTime: string
+    visitProject: string
     summary: {
       projects: string
       mmr: string
@@ -381,6 +382,7 @@ export const translations: Record<Locale, Translation> = {
       created: 'Created',
       mmr: 'MMR',
       oneTime: 'One-time',
+      visitProject: 'Visit project',
       summary: {
         projects: 'projects',
         mmr: 'MMR',
@@ -692,6 +694,7 @@ export const translations: Record<Locale, Translation> = {
       created: 'Creado',
       mmr: 'MRR',
       oneTime: 'Pago único',
+      visitProject: 'Visitar proyecto',
       summary: {
         projects: 'proyectos',
         mmr: 'MRR',
